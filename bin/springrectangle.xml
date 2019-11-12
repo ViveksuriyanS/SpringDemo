@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- ref is used to link the bean to a bean value -->
+	<bean id="rectangle1" class="com.vivek.javarocks.AreaCalculator">
+		<property name="tinyarea" ref="tiny"></property>
+		<property name="smallarea" ref="small"></property>
+		<property name="bigarea" ref="big"></property>
+		<property name="hugearea" ref="huge"></property>
+	</bean>
+	<bean id="tiny" class="com.vivek.javarocks.Rectangle">
+		<property name="height" value="1"></property>
+		<property name="width" value="1"></property>
+	</bean>
+	<bean id="small" class="com.vivek.javarocks.Rectangle">
+		<property name="height" value="5"></property>
+		<property name="width" value="5"></property>
+	</bean>
+	<bean id="big" class="com.vivek.javarocks.Rectangle">
+		<property name="height" value="50"></property>
+		<property name="width" value="50"></property>
+	</bean>
+	<bean id="huge" class="com.vivek.javarocks.Rectangle">
+		<property name="height" value="100"></property>
+		<property name="width" value="100"></property>
+	</bean>
+</beans>

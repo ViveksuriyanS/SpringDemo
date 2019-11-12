@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="triangle" class="com.vivek.javarocks.Triangle">
+		<!-- Variable Injection -->
+		<property name="type" value="Equilateral"></property>
+	</bean>
+	<bean id="triangleConstructor"
+		class="com.vivek.javarocks.Triangle">
+		<!-- Constructor Arguments Injection -->
+		<constructor-arg value="Equilateral-XY" />
+	</bean>
+
+	<bean id="triangleConstructor1"
+		class="com.vivek.javarocks.Triangle">
+		<!-- Constructor Arguments Injection -->
+		<!-- Since we are passing 2 string values, spring intelligently type cast 
+			values to constructor, can be controlled by type=> 'int'/'java.lang.String' 
+			another way is to use index -->
+		<constructor-arg index="0" value="Equilateral-XY" />
+		<constructor-arg index="1" value="10" type="int" />
+	</bean>
+</beans>
